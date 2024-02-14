@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fce4ec; /* Нежно-розовый цвет фона */
+            color: rgb(255, 126, 126); /* Белый цвет текста */
+            text-align: center;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        img {
+            max-width: 30%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        #text {
+            font-size: 70px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 90px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #f8b5c0; /* Нежно-розовый цвет кнопок */
+            border: 2px solid #9c5c85; /* Темно-розовая обводка кнопок */
+            color: white;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #ff94a1; /* Измененный цвет при наведении курсора */
+        }
+
+        #audioContainer {
+            margin-top: 10px; /* Вертикальный отступ между кнопкой и аудиоплеером */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <div id="question">
+            <h2>Will you be my valentine?</h2>
+        </div>
+
+        <div id="buttonContainer">
+            <button onclick="showMessage('page2')">YES</button>
+            <button onclick="showMessage('page3')">NO</button>
+        </div>
+    </div>
+
+    <script>
+        function showMessage(page) {
+            if (page === 'page2') {       
+                document.body.innerHTML =
+                    '<div id="container">' +
+                        '<img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTTFnZ9fUwgfji2JvAxJcj8Xg6TB4vKEHSjXGU_UBwRoidUHgQc" alt="Cute Kitty">' +
+                        '<div id="text">' +
+                            '<p>ДИАНАНАНН любимка, с валентинкой ты самая лучшая! Послушай песню, она такая прям приятная</p>' +
+                        '</div>' +
+                        '<div id="audioContainer">' +
+                            '<audio controls class="audio_for_inline_player" src="https://cdn.drivemusic.club/dl/online/zAMdixgHQ3T-KiU_ZKa6yQ/1707963124/download_music/2019/10/basta-na-zare.mp3"></audio>' +
+                        '</div>' +
+                        '<button onclick="showMessage(\'index\')">next</button>' +
+                    '</div>';
+            } else if (page === 'page3') {
+                document.body.innerHTML =
+                    '<div id="container">' +  
+                        '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6JGPLCDKdoB6bLNfQQjutidSVKccGGxd0pC4e9P_Dhbg2vzqh" alt="Cute Kitty">' +
+                        '<div id="text">' +
+                            '<p>NOO NAZAD NAZAD</p>' +
+                        '</div>' +
+                        '<button onclick="showMessage(\'index\')">DianaNazadDavai</button>' +
+                    '</div>';
+            } else {
+                document.body.innerHTML =
+                    '<div id="container">' +
+                        '<div id="question">' +
+                            '<h2>Will you be my valentine?</h2>' +
+                        '</div>' +
+                        '<div id="buttonContainer">' +
+                            '<button onclick="showMessage(\'page2\')">YES</button>' +
+                            '<button onclick="showMessage(\'page3\')">YEEES</button>' +
+                        '</div>' +
+                    '</div>';
+            }
+        }
+    </script>
+
+</body>
+</html>
